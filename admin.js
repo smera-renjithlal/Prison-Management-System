@@ -7,7 +7,7 @@ function searchPrisoner() {
         return;
     }
 
-    fetch(`http://127.0.0.1:5000/adminsearch?query=${query}`)
+    fetch(`${process.env.BACKEND_URL}/adminsearch?query=${query}`)
         .then(response => response.json())
         .then(data => {
             if (data.error) {

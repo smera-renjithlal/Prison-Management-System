@@ -2,7 +2,7 @@
 function fetchAllRecords() {
     console.log('Fetching all records...');
 
-    fetch('http://127.0.0.1:5000/allrecord')   // Ensure the URL matches your backend route
+    fetch('${process.env.BACKEND_URL}/allrecord')   // Ensure the URL matches your backend route
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');

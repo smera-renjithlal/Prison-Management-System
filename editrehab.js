@@ -1,6 +1,6 @@
 // ✅ Fetch all rehabilitation records
 function fetchRehab() {
-    fetch('http://127.0.0.1:5000/rehabilitation')
+    fetch('${process.env.BACKEND_URL}/rehabilitation')
     .then(response => response.json())
     .then(data => {
         const tableBody = document.querySelector('#rehabTable tbody');
@@ -34,7 +34,7 @@ function addRehab() {
         Prisoner_ID: document.getElementById('rehabPrisonerId').value
     };
 
-    fetch('http://127.0.0.1:5000/rehabilitation', {
+    fetch('${process.env.BACKEND_URL}/rehabilitation', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(rehabData)
@@ -50,7 +50,7 @@ function addRehab() {
 
 // ✅ Edit a rehab program
 function editRehab(rehabId) {
-    fetch(`http://127.0.0.1:5000/rehabilitation/${rehabId}`)
+    fetch(`${process.env.BACKEND_URL}/rehabilitation/${rehabId}`)
     .then(response => response.json())
     .then(rehab => {
         document.getElementById('updateRehabId').value = rehab.Rehab_ID;
@@ -72,7 +72,7 @@ function updateRehab() {
         Prisoner_ID: document.getElementById('updateRehabPrisonerId').value
     };
 
-    fetch(`http://127.0.0.1:5000/rehabilitation/${rehabId}`, {
+    fetch(`${process.env.BACKEND_URL}/rehabilitation/${rehabId}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(rehabData)
@@ -89,7 +89,7 @@ function updateRehab() {
 // ✅ Delete a rehab program
 function deleteRehab(rehabId) {
     if (confirm("Are you sure you want to delete this rehabilitation program?")) {
-        fetch(`http://127.0.0.1:5000/rehabilitation/${rehabId}`, {
+        fetch(`${process.env.BACKEND_URL}/rehabilitation/${rehabId}`, {
             method: 'DELETE'
         })
         .then(() => {

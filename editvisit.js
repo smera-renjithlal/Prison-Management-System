@@ -1,4 +1,4 @@
-const API_URL = 'http://127.0.0.1:5000/visit'; // Update this if your server URL is different
+const API_URL = '${process.env.BACKEND_URL}/visit'; // Update this if your server URL is different
 
 // Function to format date to yyyy-MM-dd
 function formatDate(dateString) {

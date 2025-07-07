@@ -9,7 +9,7 @@ function searchPrisoner() {
         return;
     }
 
-    fetch(`http://localhost:5000/search?query=${encodeURIComponent(searchQuery)}`)
+    fetch(`${process.env.BACKEND_URL}/search?query=${encodeURIComponent(searchQuery)}`)
         .then(response => response.json())
         .then(data => {
             const prisonerTableBody = document.querySelector("#prisonerTable tbody");

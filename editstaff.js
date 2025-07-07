@@ -1,6 +1,6 @@
 // Fetch all staff records from the database
 function fetchStaff() {
-    fetch('http://127.0.0.1:5000/staff')  // Adjust the API URL as per your backend
+    fetch('${process.env.BACKEND_URL}/staff')  // Adjust the API URL as per your backend
         .then(response => response.json())
         .then(data => {
             const tableBody = document.querySelector('#staffTable tbody');
@@ -31,7 +31,7 @@ function fetchStaff() {
 
 // Function to handle the Edit button click
 function editStaff(staffId) {
-    fetch(`http://127.0.0.1:5000/staff/${staffId}`)
+    fetch(`${process.env.BACKEND_URL}/staff/${staffId}`)
         .then(response => response.json())
         .then(staff => {
             document.getElementById('name').value = staff.Name;
@@ -72,7 +72,7 @@ function updateStaff() {
     };
 
     // Send PUT request to update staff details
-    fetch(`http://127.0.0.1:5000/staff/${staffId}`, {
+    fetch(`${process.env.BACKEND_URL}/staff/${staffId}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
@@ -108,7 +108,7 @@ function addStaff() {
         address
     };
 
-    fetch('http://127.0.0.1:5000/staff', {
+    fetch('${process.env.BACKEND_URL}/staff', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -130,7 +130,7 @@ function addStaff() {
 function deleteStaff(staffId) {
     const confirmDelete = confirm("Are you sure you want to delete this staff member?");
     if (confirmDelete) {
-        fetch(`http://127.0.0.1:5000/staff/${staffId}`, {
+        fetch(`${process.env.BACKEND_URL}/staff/${staffId}`, {
             method: 'DELETE'
         })
         .then(response => response.json())
