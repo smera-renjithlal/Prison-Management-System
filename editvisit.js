@@ -1,4 +1,6 @@
-const API_URL = '${process.env.BACKEND_URL}/visit'; // Update this if your server URL is different
+import { BACKEND_URL } from './config.js';
+
+const API_URL = `${BACKEND_URL}/visit`; // Update this if your server URL is different
 
 // Function to format date to yyyy-MM-dd
 function formatDate(dateString) {

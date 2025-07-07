@@ -1,7 +1,9 @@
+import { BACKEND_URL } from './config.js';
+
 document.addEventListener("DOMContentLoaded", fetchCells);
 
 function fetchCells() {
-    fetch("${process.env.BACKEND_URL}/cells")
+    fetch(`${BACKEND_URL}/cells`)
         .then(response => response.json())
         .then(data => {
             const tableBody = document.querySelector("#cellsTable tbody");
@@ -39,7 +41,7 @@ function updateCell() {
 
     const data = { block, capacity, prisonerId };
 
-    fetch(`${process.env.BACKEND_URL}/cells/${cellId}`, {
+    fetch(`${BACKEND_URL}/cells/${cellId}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
@@ -57,7 +59,7 @@ function updateCell() {
 
 function deleteCell(cellId) {
     if (confirm("Are you sure you want to delete this cell?")) {
-        fetch(`${process.env.BACKEND_URL}/cells/${cellId}`, {
+        fetch(`${BACKEND_URL}/cells/${cellId}`, {
             method: "DELETE"
         })
             .then(response => response.json())
@@ -79,7 +81,7 @@ function addCell() {
 
     const data = { block, capacity, prisonerId };
 
-    fetch("${process.env.BACKEND_URL}/cells", {
+    fetch(`${BACKEND_URL}/cells`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),

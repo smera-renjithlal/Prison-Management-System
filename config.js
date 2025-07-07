@@ -1,0 +1,1 @@
+export const BACKEND_URL = "https://prison-management-system-production.up.railway.app";

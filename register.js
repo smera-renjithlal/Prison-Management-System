@@ -1,3 +1,5 @@
+import { BACKEND_URL } from './config.js';
+
 document.getElementById('registerForm').addEventListener('submit', async function(event) {
     event.preventDefault();
 
@@ -13,7 +15,7 @@ document.getElementById('registerForm').addEventListener('submit', async functio
     }
 
     try{
-        const response = await fetch('${process.env.BACKEND_URL}/register', {
+        const response = await fetch(`${BACKEND_URL}/register`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ username, email, password, role })

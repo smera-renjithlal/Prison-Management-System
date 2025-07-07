@@ -1,3 +1,5 @@
+import { BACKEND_URL } from './config.js';
+
 // Search function to send query and fetch records
 function searchPrisoner() {
     const query = document.getElementById('searchInput').value;
@@ -7,7 +9,7 @@ function searchPrisoner() {
         return;
     }
 
-    fetch(`${process.env.BACKEND_URL}/adminsearch?query=${query}`)
+    fetch(`${BACKEND_URL}/adminsearch?query=${query}`)
         .then(response => response.json())
         .then(data => {
             if (data.error) {

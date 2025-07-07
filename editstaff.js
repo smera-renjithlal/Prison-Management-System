@@ -1,6 +1,8 @@
+import { BACKEND_URL } from './config.js';
+
 // Fetch all staff records from the database
 function fetchStaff() {
-    fetch('${process.env.BACKEND_URL}/staff')  // Adjust the API URL as per your backend
+    fetch(`${BACKEND_URL}/staff`)  // Adjust the API URL as per your backend
         .then(response => response.json())
         .then(data => {
             const tableBody = document.querySelector('#staffTable tbody');
@@ -31,7 +33,7 @@ function fetchStaff() {
 
 // Function to handle the Edit button click
 function editStaff(staffId) {
-    fetch(`${process.env.BACKEND_URL}/staff/${staffId}`)
+    fetch(`${BACKEND_URL}/staff/${staffId}`)
         .then(response => response.json())
         .then(staff => {
             document.getElementById('name').value = staff.Name;
@@ -72,7 +74,7 @@ function updateStaff() {
     };
 
     // Send PUT request to update staff details
-    fetch(`${process.env.BACKEND_URL}/staff/${staffId}`, {
+    fetch(`${BACKEND_URL}/staff/${staffId}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
@@ -108,7 +110,7 @@ function addStaff() {
         address
     };
 
-    fetch('${process.env.BACKEND_URL}/staff', {
+    fetch(`${BACKEND_URL}/staff`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -130,7 +132,7 @@ function addStaff() {
 function deleteStaff(staffId) {
     const confirmDelete = confirm("Are you sure you want to delete this staff member?");
     if (confirmDelete) {
-        fetch(`${process.env.BACKEND_URL}/staff/${staffId}`, {
+        fetch(`${BACKEND_URL}/staff/${staffId}`, {
             method: 'DELETE'
         })
         .then(response => response.json())

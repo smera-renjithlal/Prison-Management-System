@@ -1,3 +1,5 @@
+import { BACKEND_URL } from './config.js';
+
 document.addEventListener("DOMContentLoaded", function () {
     document.querySelector(".search-box button").addEventListener("click", searchPrisoner);
 });
@@ -9,7 +11,7 @@ function searchPrisoner() {
         return;
     }
 
-    fetch(`${process.env.BACKEND_URL}/search?query=${encodeURIComponent(searchQuery)}`)
+    fetch(`${BACKEND_URL}/search?query=${encodeURIComponent(searchQuery)}`)
         .then(response => response.json())
         .then(data => {
             const prisonerTableBody = document.querySelector("#prisonerTable tbody");

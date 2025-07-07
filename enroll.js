@@ -1,3 +1,5 @@
+import { BACKEND_URL } from './config.js';
+
 document.getElementById("inmateForm").addEventListener("submit", async function (e) {
     e.preventDefault();
 
@@ -10,7 +12,7 @@ document.getElementById("inmateForm").addEventListener("submit", async function 
     };
 
     try {
-        const response = await fetch("${process.env.BACKEND_URL}/prisoners/add", {
+        const response = await fetch(`${BACKEND_URL}/prisoners/add`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(formData)

@@ -1,3 +1,5 @@
+import { BACKEND_URL } from './config.js';
+
 // Function to handle Add Crime
 function addCrime() {
     const crimeName = document.getElementById('crimeName').value;
@@ -18,7 +20,7 @@ function addCrime() {
         Prisoner_ID: prisonerId
     };
 
-    fetch('${process.env.BACKEND_URL}/crime', {
+    fetch(`${BACKEND_URL}/crime`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -58,7 +60,7 @@ function updateCrime() {
         Prisoner_ID: prisonerId
     };
 
-    fetch(`${process.env.BACKEND_URL}/crime/${crimeId}`, {
+    fetch(`${BACKEND_URL}/crime/${crimeId}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
@@ -79,7 +81,7 @@ function updateCrime() {
 
 // Function to populate the Update form with data from the server
 function editCrime(crimeId) {
-    fetch(`${process.env.BACKEND_URL}/crime/${crimeId}`)
+    fetch(`${BACKEND_URL}/crime/${crimeId}`)
         .then(response => response.json())
         .then(crime => {
             // Fill in the update form with the existing data
@@ -100,7 +102,7 @@ function editCrime(crimeId) {
 
 // Function to fetch all crime records from the database
 function fetchCrimes() {
-    fetch('${process.env.BACKEND_URL}/crime')  // Adjust the API URL as per your backend
+    fetch(`${BACKEND_URL}/crime`)  // Adjust the API URL as per your backend
         .then(response => response.json())
         .then(data => {
             const tableBody = document.querySelector('#crimeTable tbody');
@@ -131,7 +133,7 @@ function fetchCrimes() {
 function deleteCrime(crimeId) {
     const confirmDelete = confirm("Are you sure you want to delete this crime record?");
     if (confirmDelete) {
-        fetch(`${process.env.BACKEND_URL}/crime/${crimeId}`, {
+        fetch(`${BACKEND_URL}/crime/${crimeId}`, {
             method: 'DELETE'
         })
         .then(response => response.json())

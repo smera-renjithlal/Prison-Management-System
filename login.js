@@ -1,3 +1,5 @@
+import { BACKEND_URL } from './config.js';
+
 document.addEventListener("DOMContentLoaded", function() {
     console.log("✅ Login script loaded!");
 
@@ -24,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
         console.log("Username:", username, "Password:", password);
 
         try {
-            const response = await fetch('${process.env.BACKEND_URL}/login', {
+            const response = await fetch(`${BACKEND_URL}/login`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ username, password })

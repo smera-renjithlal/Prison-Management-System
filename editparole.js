@@ -1,4 +1,6 @@
-const API_URL = '${process.env.BACKEND_URL}/parole'; // Ensure this matches your server
+import { BACKEND_URL } from './config.js';
+
+const API_URL = `${BACKEND_URL}/parole`; // Ensure this matches your server
 
 // Function to format date to yyyy-MM-dd
 function formatDate(dateString) {

@@ -1,3 +1,5 @@
+import { BACKEND_URL } from './config.js';
+
 // Function to show the visitation form and hide the parole form
 function showVisitationForm() {
     document.getElementById('visitationForm').style.display = 'block';
@@ -22,7 +24,7 @@ document.querySelector('#visitationForm form').addEventListener('submit', async 
     const date = document.getElementById('date').value;
 
     // Sending data to the backend via POST request
-    const response = await fetch('${process.env.BACKEND_URL}/submit-visitation', {
+    const response = await fetch(`${BACKEND_URL}/submit-visitation`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -56,7 +58,7 @@ document.querySelector('#paroleForm form').addEventListener('submit', async func
     const details = document.getElementById('details').value;
 
     // Sending data to the backend via POST request
-    const response = await fetch('${process.env.BACKEND_URL}/submit-parole', {
+    const response = await fetch(`${BACKEND_URL}/submit-parole`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

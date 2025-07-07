@@ -1,8 +1,10 @@
+import { BACKEND_URL } from './config.js';
+
 // Function to fetch all records from the server and display them in the tables
 function fetchAllRecords() {
     console.log('Fetching all records...');
 
-    fetch('${process.env.BACKEND_URL}/allrecord')   // Ensure the URL matches your backend route
+    fetch(`${BACKEND_URL}/allrecord`)   // Ensure the URL matches your backend route
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
