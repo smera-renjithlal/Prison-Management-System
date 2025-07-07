@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investigator Portal</title>
+    <link rel="stylesheet" href="investigator.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Investigator Portal</h2>
+        
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Enter Prisoner ID or Name">
+            <button onclick="searchPrisoner()">Search</button>
+        </div>
+
+        <!-- Prisoner Details Table -->
+        <h3>Prisoner Details</h3>
+        <table id="prisonerTable">
+            <thead>
+                <tr>
+                    <th>Prisoner ID</th>
+                    <th>Name</th>
+                    <th>DOB</th>
+                    <th>Gender</th>
+                    <th>Address</th>
+                    <th>Sentence Duration</th>
+                    <th>Supervisor ID</th>
+                    <th>Supervisor Name</th>
+                </tr>
+            </thead>
+            <tbody id="prisonerResults"></tbody>
+        </table>
+
+        <!-- Crime Records Table -->
+        <h3>Crime Records</h3>
+        <table id="crimeTable">
+            <thead>
+                <tr>
+                    <th>Crime ID</th>
+                    <th>Crime Type</th>
+                    <th>Description</th>
+                    <th>Date Committed</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <!-- Cell Assignment Table -->
+        <h3>Cell Assignment</h3>
+        <table id="cellTable">
+            <thead>
+                <tr>
+                    <th>Cell ID</th>
+                    <th>Block ID</th>
+                    <th>Capacity</th>
+                    <th>Prisoner ID</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <!-- Rehabilitation Table -->
+        <h3>Rehabilitation Programs</h3>
+        <table id="rehabTable">
+            <thead>
+                <tr>
+                    <th>Rehab ID</th>
+                    <th>Program Name</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <!-- Parole Requests Table -->
+        <h3>Parole Requests</h3>
+        <table id="paroleTable">
+            <thead>
+                <tr>
+                    <th>Request ID</th>
+                    <th>Details</th>
+                    <th>Approved</th>
+                    <th>Hearing Date</th> <!-- Added Hearing Date column -->
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <!-- Visit Records Table -->
+<h3>Visit Records</h3>
+<table id="visitTable">
+    <thead>
+        <tr>
+            <th>Visit ID</th>
+            <th>Visitor Name</th>
+            <th>Relationship</th>
+            <th>Contact No</th>
+            <th>Date</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+    </div>
+
+    <script src="investigator.js"></script>
+</body>
+</html>

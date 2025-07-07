@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Staff</title>
+    <link rel="stylesheet" href="editcell.css">
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>ADMIN PANEL</h2>
+        <button class="btn" onclick="window.location.href='admin.html'">🔍 Search all records</button>
+        <button class="btn" onclick="window.location.href='allrec.html'">📋 Show All Records</button>
+        <button class="btn" onclick="window.location.href='enroll.html'">➕ Enroll Inmate</button>
+        <button class="btn" onclick="window.location.href='editpris.html'">✏️ Edit Prisoner</button>
+        <button class="btn" onclick="window.location.href='editcell.html'">✏️ Cell</button>
+        <button class="btn" onclick="window.location.href='editcrime.html'">✏️ Crime</button>
+        <button class="btn" onclick="window.location.href='editparole.html'">✏️Parole</button>
+        <button class="btn" onclick="window.location.href='editrehab.html'">✏️ Rehabilitation</button>
+        <button class="btn" onclick="window.location.href='editvisit.html'">✏️ Visit</button>
+        <button class="btn" onclick="window.location.href='editstaff.html'">✏️ Staff</button>
+    
+    </div>
+
+    <!-- Main Content -->
+    <div id="mainContent">
+        <h2>Edit Staff Details</h2>
+
+        <!-- Table to Display All Staff -->
+        <table id="staffTable">
+            <thead>
+                <tr>
+                    <th>Staff ID</th>
+                    <th>Name</th>
+                    <th>Contact No</th>
+                    <th>Hire Date</th>
+                    <th>Gender</th>
+                    <th>Salary</th>
+                    <th>Address</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <!-- Form to Update Staff -->
+        <h3>Update Staff</h3>
+        <form id="updateStaffForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Name" required>
+
+            <label for="contact">Contact No:</label>
+            <input type="text" id="contact" placeholder="Contact No" required>
+
+            <label for="hireDate">Hire Date:</label>
+            <input type="date" id="hireDate" required>
+
+            <label for="gender">Gender:</label>
+            <select id="gender" required>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+
+            <label for="salary">Salary:</label>
+            <input type="number" id="salary" placeholder="Salary" required>
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" placeholder="Address" required>
+
+            <!-- Save Button -->
+            <button type="button" id="saveButton" onclick="updateStaff()">Save</button>
+        </form>
+
+        <!-- Form to Add New Staff -->
+        <h3>Add New Staff</h3>
+        <form id="addStaffForm">
+            <label for="addName">Name:</label>
+            <input type="text" id="addName" placeholder="Name" required>
+
+            <label for="addContact">Contact No:</label>
+            <input type="text" id="addContact" placeholder="Contact No" required>
+
+            <label for="addHireDate">Hire Date:</label>
+            <input type="date" id="addHireDate" required>
+
+            <label for="addGender">Gender:</label>
+            <select id="addGender" required>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+
+            <label for="addSalary">Salary:</label>
+            <input type="number" id="addSalary" placeholder="Salary" required>
+
+            <label for="addAddress">Address:</label>
+            <input type="text" id="addAddress" placeholder="Address" required>
+
+            <!-- Add Button -->
+            <button type="button" id="addButton" onclick="addStaff()">Add Staff</button>
+        </form>
+    </div>
+
+    <script src="editstaff.js"></script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Cell</title>
+    <link rel="stylesheet" href="editcell.css">
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>ADMIN PANEL</h2>
+        <button class="btn" onclick="window.location.href='admin.html'">🔍 Search all records</button>
+        <button class="btn" onclick="window.location.href='allrec.html'">📋 Show All Records</button>
+        <button class="btn" onclick="window.location.href='enroll.html'">➕ Enroll Inmate</button>
+        <button class="btn" onclick="window.location.href='editpris.html'">✏️ Edit Prisoner</button>
+        <button class="btn" onclick="window.location.href='editcell.html'">✏️ Cell</button>
+        <button class="btn" onclick="window.location.href='editcrime.html'">✏️ Crime</button>
+        <button class="btn" onclick="window.location.href='editparole.html'">✏️Parole</button>
+        <button class="btn" onclick="window.location.href='editrehab.html'">✏️ Rehabilitation</button>
+        <button class="btn" onclick="window.location.href='editvisit.html'">✏️ Visit</button>
+        <button class="btn" onclick="window.location.href='editstaff.html'">✏️ Staff</button>
+    
+    </div>
+
+    <!-- Main Content -->
+    <div id="mainContent">
+        <h2>Edit Cell Details</h2>
+
+        <!-- Table to Display All Cells -->
+        <table id="cellsTable">
+            <thead>
+                <tr>
+                    <th>Cell ID</th>
+                    <th>Block ID</th>
+                    <th>Capacity</th>
+                    <th>Prisoner ID</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <!-- Form to Update Cell -->
+        <h3>Update Cell</h3>
+        <form id="updateCellForm">
+            <label for="cellId">Cell ID:</label>
+            <input type="number" id="cellId" placeholder="Cell ID" required disabled>
+            <br>
+            <label for="block">Block ID:</label>
+            <input type="text" id="block" placeholder="Block ID" required>
+            <br>
+            <label for="capacity">Capacity:</label>
+            <input type="number" id="capacity" placeholder="Capacity" required>
+<br>
+            <label for="prisonerId">Prisoner ID:</label>
+            <input type="number" id="prisonerId" placeholder="Prisoner ID (Optional)">
+            <br>
+            <button type="button" onclick="updateCell()">Save</button>
+        </form>
+
+        <!-- Form to Add New Cell -->
+        <h3>Add New Cell</h3>
+        <form id="addCellForm">
+            <label for="newBlock">Block ID:</label>
+            <input type="text" id="newBlock" placeholder="Block ID" required>
+            <br>
+            <label for="newCapacity">Capacity:</label>
+            <input type="number" id="newCapacity" placeholder="Capacity" required>
+            <br>
+            <label for="newPrisonerId">Prisoner ID:</label>
+            <input type="number" id="newPrisonerId" placeholder="Prisoner ID (Optional)">
+            <br>
+            <button type="button" onclick="addCell()">Add Cell</button>
+        </form>
+    </div>
+
+    <script src="editcell.js"></script>
+</body>
+</html>

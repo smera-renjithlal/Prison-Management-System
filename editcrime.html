@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Crime</title>
+    <link rel="stylesheet" href="editcell.css">
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>ADMIN PANEL</h2>
+        <button class="btn" onclick="window.location.href='admin.html'">🔍 Search all records</button>
+        <button class="btn" onclick="window.location.href='allrec.html'">📋 Show All Records</button>
+        <button class="btn" onclick="window.location.href='enroll.html'">➕ Enroll Inmate</button>
+        <button class="btn" onclick="window.location.href='editpris.html'">✏️ Edit Prisoner</button>
+        <button class="btn" onclick="window.location.href='editcell.html'">✏️ Cell</button>
+        <button class="btn" onclick="window.location.href='editcrime.html'">✏️ Crime</button>
+        <button class="btn" onclick="window.location.href='editparole.html'">✏️Parole</button>
+        <button class="btn" onclick="window.location.href='editrehab.html'">✏️ Rehabilitation</button>
+        <button class="btn" onclick="window.location.href='editvisit.html'">✏️ Visit</button>
+        <button class="btn" onclick="window.location.href='editstaff.html'">✏️ Staff</button>
+    
+    </div>
+
+    <!-- Main Content -->
+    <div id="mainContent">
+
+               <!-- Table to Display All Crimes -->
+               <table id="crimeTable">
+                <thead>
+                    <tr>
+                        <th>Crime ID</th>
+                        <th>Prisoner ID</th>
+                        <th>Crime Type</th>
+                        <th>Description</th>
+                        <th>Date Committed</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+
+        <h2>Add Crime</h2>
+
+        <!-- Add Crime Form -->
+        <form id="addCrimeForm">
+            <label for="crimeName">Crime Name:</label>
+            <input type="text" id="crimeName" placeholder="Crime Name" required>
+
+            <label for="crimeType">Crime Type:</label>
+            <input type="text" id="crimeType" placeholder="Crime Type" required>
+
+            <label for="dateCommitted">Date Committed:</label>
+            <input type="date" id="dateCommitted" required>
+
+            <label for="prisonerId">Prisoner ID:</label>
+            <input type="number" id="prisonerId" placeholder="Prisoner ID" required>
+
+            <button type="button" onclick="addCrime()">Add Crime</button>
+        </form>
+
+        <hr>
+
+        <h2>Update Crime</h2>
+
+        <!-- Update Crime Form -->
+        <form id="updateCrimeForm">
+            <label for="updateCrimeId">Crime ID:</label>
+            <input type="text" id="updateCrimeId" disabled> <!-- Crime ID is read-only -->
+
+            <label for="updateCrimeName">Crime Name:</label>
+            <input type="text" id="updateCrimeName" placeholder="Crime Name" required>
+
+            <label for="updateCrimeType">Crime Type:</label>
+            <input type="text" id="updateCrimeType" placeholder="Crime Type" required>
+
+            <label for="updateDateCommitted">Date Committed:</label>
+            <input type="date" id="updateDateCommitted" required>
+
+            <label for="updatePrisonerId">Prisoner ID:</label>
+            <input type="text" id="updatePrisonerId" placeholder="Prisoner ID" required>
+
+            <button type="button" onclick="updateCrime()">Update Crime</button>
+        </form>
+
+ 
+    </div>
+
+    <script src="editcrime.js"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WARDEN DASHBOARD</title>
+    <link href="./warden.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>WARDEN</h2>
+    <button class="btn" onclick="fetchAllRecords()">📋 Show All Records</button>
+    <button class="btn" onclick="showEnrollInmate()">➕ Enroll Inmate</button>
+    <button class="btn" onclick="fetchParoleRecords()">✅ Approve Parole Requests</button>
+    <button class="btn" onclick="fetchVisitRecords()">🏦 Visitation Requests</button>
+</div>
+
+<div class="main-content">
+    <h1>Data Results</h1>
+
+    <!-- Search Prisoner by ID -->
+    <div id="searchSection">
+        <h2>Search Prisoner</h2>
+        <input type="number" id="searchInput" placeholder="Enter prisoner ID">
+        <button onclick="searchPrisoner()">🔍 Search</button>
+    </div>
+
+    <!-- Display Search Results -->
+    <div id="searchResults" class="data-section" style="display: none;">
+        <h2>Search Results</h2>
+        <div id="searchTableContainer"></div>
+    </div>
+
+    <!-- Display All Records -->
+    <div id="allRecordsSection" class="data-section" style="display: none;">
+        <h2>All Prisoners</h2>
+        <div id="allRecordsTableContainer"></div>
+    </div>
+
+    <!-- Enroll Inmate Section -->
+    <div id="enrollSection" class="data-section" style="display: none;">
+        <h2>Enroll Inmate</h2>
+        <div id="enrollTableContainer"></div>
+        <button class="add-btn" onclick="location.href='enroll.html'">➕ Add Inmate</button>
+    </div>
+
+    <!-- Parole Request Section -->
+    <div id="paroleSection" class="data-section" style="display: none;">
+        <h2>Approve Parole Requests</h2>
+        <div id="parole-records"></div>
+    </div>
+
+    <div id="visitSection" class="data-section" style="display: none;">
+        <h2>Visitation Requests</h2>
+        <div id="visit-records"></div>
+    </div>
+</div>
+
+<script src="./warden.js"></script>
+
+</body>
+</html>

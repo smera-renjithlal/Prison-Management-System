@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rehabilitation Management</title>
+    <link rel="stylesheet" href="editcell.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>ADMIN PANEL</h2>
+        <button class="btn" onclick="window.location.href='admin.html'">🔍 Search all records</button>
+        <button class="btn" onclick="window.location.href='allrec.html'">📋 Show All Records</button>
+        <button class="btn" onclick="window.location.href='enroll.html'">➕ Enroll Inmate</button>
+        <button class="btn" onclick="window.location.href='editpris.html'">✏️ Edit Prisoner</button>
+        <button class="btn" onclick="window.location.href='editcell.html'">✏️ Cell</button>
+        <button class="btn" onclick="window.location.href='editcrime.html'">✏️ Crime</button>
+        <button class="btn" onclick="window.location.href='editparole.html'">✏️Parole</button>
+        <button class="btn" onclick="window.location.href='editrehab.html'">✏️ Rehabilitation</button>
+        <button class="btn" onclick="window.location.href='editvisit.html'">✏️ Visit</button>
+        <button class="btn" onclick="window.location.href='editstaff.html'">✏️ Staff</button>
+    
+    </div>
+    <div id="mainContent">
+    <div id="rehabList">
+        <h3>Rehabilitation Programs</h3>
+        <table id="rehabTable">
+            <thead>
+                <tr>
+                    <th>Rehab ID</th>
+                    <th>Prisoner ID</th>
+                    <th>Program Name</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="addRehabForm">
+        <h3>Add Rehabilitation Program</h3>
+        <form>
+            <label for="rehabProgramName">Program Name:</label>
+            <input type="text" id="rehabProgramName" placeholder="Program Name" required>
+            <br>
+            <label for="rehabStartDate">Start Date:</label>
+            <input type="date" id="rehabStartDate" required>
+            <br>
+            <label for="rehabEndDate">End Date:</label>
+            <input type="date" id="rehabEndDate" required>
+            <br>
+            <label for="rehabPrisonerId">Prisoner ID:</label>
+            <input type="number" id="rehabPrisonerId" placeholder="Prisoner ID" required>
+            <br>
+            <button type="button" onclick="addRehab()">Add Rehabilitation</button>
+        </form>
+    </div>
+
+    <div id="updateRehabForm">
+        <h3>Update Rehabilitation Program</h3>
+        <form>
+            <label for="updateRehabId">Rehabilitation ID:</label>
+            <input type="text" id="updateRehabId" disabled>
+            <br>
+            <label for="updateRehabProgramName">Program Name:</label>
+            <input type="text" id="updateRehabProgramName" required>
+            <br>
+            <label for="updateRehabStartDate">Start Date:</label>
+            <input type="date" id="updateRehabStartDate" required>
+            <br>
+            <label for="updateRehabEndDate">End Date:</label>
+            <input type="date" id="updateRehabEndDate" required>
+            <br>
+            <label for="updateRehabPrisonerId">Prisoner ID:</label>
+            <input type="number" id="updateRehabPrisonerId" required>
+            <br>
+            <button type="button" onclick="updateRehab()">Update Rehabilitation</button>
+        </form>
+    </div>
+</div>
+    <script src="editrehab.js"></script>
+</body>
+</html>

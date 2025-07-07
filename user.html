@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USER Dashboard</title>
+    <link rel="stylesheet" href="./user.css">
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>USER</h2>   <!-- Added 'USER' label -->
+    
+    <button onclick="showVisitationForm()">Visitation</button>
+    <button onclick="showParoleForm()">Parole</button>
+</div>
+
+<div class="main-content">
+    <h1>User Dashboard</h1>
+
+    <!-- Visitation Form -->
+    <div id="visitationForm" class="form-section" style="display: none;">
+        <h2>Visitation Form</h2>
+        <form>
+            <label for="prisoner_id_visitation">Prisoner ID:</label>
+            <input type="text" id="prisoner_id_visitation" placeholder="Enter Prisoner ID" required>
+
+            <label for="visitor_name">Visitor Name:</label>
+            <input type="text" id="visitor_name" placeholder="Enter Visitor Name" required>
+
+            <label for="relationship">Relationship:</label>
+            <input type="text" id="relationship" placeholder="Enter Relationship" required>
+
+            <label for="contact_no">Contact No:</label>
+            <input type="text" id="contact_no" placeholder="Enter Contact Number" required>
+
+            <label for="date">Date:</label>
+            <input type="date" id="date" required>
+
+            <button type="submit">Submit Visitation</button>
+        </form>
+    </div>
+
+    <!-- Parole Form -->
+    <div id="paroleForm" class="form-section" style="display: none;">
+        <h2>Parole Form</h2>
+        <form>
+            <label for="prisoner_id_parole">Prisoner ID:</label>
+            <input type="text" id="prisoner_id_parole" placeholder="Enter Prisoner ID" required>
+
+            <label for="details">Details:</label>
+            <textarea id="details" placeholder="Enter Parole Details" rows="4" required></textarea>
+
+            <button type="submit">Submit Parole</button>
+        </form>
+    </div>
+</div>
+
+<script src="./user.js"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enroll Inmate</title>
+    <link href="./enroll.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+    <h2>Enroll New Inmate</h2>
+    
+    <form id="inmateForm">
+        <input type="text" id="name" placeholder="Name" required>
+        <input type="date" id="dob" required>
+        <select id="gender" required>
+            <option value="M">Male</option>
+            <option value="F">Female</option>
+            <option value="O">Other</option>
+        </select>
+        
+        <input type="text" id="address" placeholder="Address" required>
+        <input type="text" id="sentence_duration" placeholder="Sentence Duration" required>
+        <button type="submit">Submit</button>
+    </form>
+
+</div>
+
+<script src="./enroll.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Prisoner</title>
+    <link rel="stylesheet" href="editpris.css">
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>ADMIN PANEL</h2>
+        <button class="btn" onclick="window.location.href='admin.html'">🔍 Search all records</button>
+        <button class="btn" onclick="window.location.href='allrec.html'">📋 Show All Records</button>
+        <button class="btn" onclick="window.location.href='enroll.html'">➕ Enroll Inmate</button>
+        <button class="btn" onclick="window.location.href='editpris.html'">✏️ Edit Prisoner</button>
+        <button class="btn" onclick="window.location.href='editcell.html'">✏️ Cell</button>
+        <button class="btn" onclick="window.location.href='editcrime.html'">✏️ Crime</button>
+        <button class="btn" onclick="window.location.href='editparole.html'">✏️Parole</button>
+        <button class="btn" onclick="window.location.href='editrehab.html'">✏️ Rehabilitation</button>
+        <button class="btn" onclick="window.location.href='editvisit.html'">✏️ Visit</button>
+        <button class="btn" onclick="window.location.href='editstaff.html'">✏️ Staff</button>
+    
+    </div>
+    <!-- Main Content -->
+    <div id="mainContent">
+        <h2>Edit Prisoner Details</h2>
+
+        <!-- Table to Display All Prisoners -->
+        <table id="prisonersTable">
+            <thead>
+                <tr>
+                    <th>Prisoner ID</th>
+                    <th>Name</th>
+                    <th>DOB</th>
+                    <th>Gender</th>
+                    <th>Address</th>
+                    <th>Sentence Duration</th>
+                    <th>Supervisor ID</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <!-- Form to Update Prisoner -->
+        <h3>Update Prisoner</h3>
+        <form id="updatePrisonerForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Name" required>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" placeholder="Date of Birth" required>
+
+            <label for="gender">Gender:</label>
+            <select id="gender" required>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" placeholder="Address" required>
+
+            <label for="sentenceDuration">Sentence Duration:</label>
+            <input type="text" id="sentenceDuration" placeholder="Sentence Duration" required>
+
+            <label for="supervisorId">Supervisor ID:</label>
+            <input type="text" id="supervisorId" placeholder="Supervisor ID" required>
+
+            <!-- Save Button -->
+            <button type="button" id="saveButton" onclick="updatePrisoner()">Save</button>
+        </form>
+    </div>
+
+    <script src="editpris.js"></script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link href="admin.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>ADMIN PANEL</h2>
+    <button class="btn" onclick="window.location.href='admin.html'">🔍 Search all records</button>
+    <button class="btn" onclick="window.location.href='allrec.html'">📋 Show All Records</button>
+    <button class="btn" onclick="window.location.href='enroll.html'">➕ Enroll Inmate</button>
+    <button class="btn" onclick="window.location.href='editpris.html'">✏️ Edit Prisoner</button>
+    <button class="btn" onclick="window.location.href='editcell.html'">✏️ Cell</button>
+    <button class="btn" onclick="window.location.href='editcrime.html'">✏️ Crime</button>
+    <button class="btn" onclick="window.location.href='editparole.html'">✏️Parole</button>
+    <button class="btn" onclick="window.location.href='editrehab.html'">✏️ Rehabilitation</button>
+    <button class="btn" onclick="window.location.href='editvisit.html'">✏️ Visit</button>
+    <button class="btn" onclick="window.location.href='editstaff.html'">✏️ Staff</button>
+
+</div>
+
+<div class="main-content">
+    <h1>Prisoner Data</h1>
+
+    <!-- Search Prisoner -->
+    <div class="search-box">
+        <h2>Search Prisoner</h2>
+        <input type="text" id="searchInput" placeholder="Enter Prisoner Name">
+        <button onclick="searchPrisoner()">🔍 Search</button>
+    </div>
+
+    <!-- Prisoner Records Table -->
+    <div id="recordsSection">
+        <h2>Prisoner Details</h2>
+        <table id="prisonerTable">
+            <thead>
+                <tr>
+                    <th>Prisoner ID</th>
+                    <th>Name</th>
+                    <th>DOB</th>
+                    <th>Gender</th>
+                    <th>Address</th>
+                    <th>Sentence Duration</th>
+                    <th>Supervisor ID</th>
+                    <th>Supervisor Name</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <!-- Other Record Sections -->
+    <div id="otherRecords">
+        <h2>Other Records</h2>
+
+        <h3>Crime Records</h3>
+        <table id="crimeTable">
+            <thead>
+                <tr>
+                    <th>Prisoner ID</th>
+                    <th>Crime ID</th>
+                    <th>Crime Type</th>
+                    <th>Description</th>
+                    <th>Date Committed</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <h3>Cell Assignments</h3>
+        <table id="cellTable">
+            <thead>
+                <tr>
+                    <th>Prisoner ID</th>
+                    <th>Cell ID</th>
+                    <th>Block ID</th>
+                    <th>Capacity</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <h3>Rehabilitation Programs</h3>
+        <table id="rehabTable">
+            <thead>
+                <tr>
+                    <th>Prisoner ID</th>
+                    <th>Rehab ID</th>
+                    <th>Program Name</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <h3>Parole Requests</h3>
+        <table id="paroleTable">
+            <thead>
+                <tr>
+                    <th>Request ID</th>
+                    <th>Prisoner ID</th>
+                    <th>Details</th>
+                    <th>Approved</th>
+                    <th>Hearing Date</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <h3>Visit Records</h3>
+        <table id="visitTable">
+            <thead>
+                <tr>
+                    <th>Prisoner ID</th>
+                    <th>Visit ID</th>
+                    <th>Visitor Name</th>
+                    <th>Relationship</th>
+                    <th>Contact No</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        
+    </div>
+
+<script src="admin.js"></script>
+
+</body>
+</html>

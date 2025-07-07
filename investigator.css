@@ -1,0 +1,107 @@
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* General body styles */
+body {
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;  /* Align at the top to make room for scrolling */
+    height: 100vh;
+    padding-top: 20px;  /* Optional: adds space from the top */
+}
+
+/* Container for the content */
+.container {
+    width: 90%;
+    max-width: 1000px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    overflow-y: auto;
+}
+
+/* Header styles */
+h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Search box styles */
+.search-box {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* Input and button styles */
+input {
+    padding: 10px;
+    width: 60%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 15px;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #184665;
+}
+
+/* Table styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Table header and body styles */
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+th {
+    background: #3498db;
+    color: white;
+}
+
+/* Add scroll to tbody for tables with too many rows */
+tbody {
+    display: block;
+    max-height: 300px; /* Adjust height as needed */
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* Ensure table headers are fixed and align with tbody */
+thead, tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+/* Make the whole container scrollable */
+.container {
+    padding: 20px;
+    margin-top: 20px;
+    overflow-y: auto;
+    max-height: 90vh; /* Adjust this value to allow scrolling within the container */
+}
