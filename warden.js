@@ -339,3 +339,8 @@ function displayResults3(records, sectionId, containerId) {
     tableHTML += "</tbody></table>";
     tableContainer.innerHTML = tableHTML;
 }
+
+document.getElementById('viewAllBtn').addEventListener('click', fetchAllRecords);
+document.getElementById('enrollBtn').addEventListener('click', showEnrollInmate);
+document.getElementById('paroleBtn').addEventListener('click', fetchParoleRecords);
+document.getElementById('visitBtn').addEventListener('click', fetchVisitRecords);
